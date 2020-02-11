@@ -1,0 +1,33 @@
+Public 
+The members, methods and classes that are declared public can be accessed from anywhere. 
+This modifier doesn’t put any restriction on the access
+
+Private
+Private Data members and methods are only accessible within the class,
+Class and Interface cannot be declared as private,
+If a class has private constructor then you cannot create the object of that class
+from outside of the class
+
+Protected
+the protected access modifier is similar to default access modifier with one 
+exception that it has visibility in sub classes.Classes cannot be declared protected.
+.
+
+Default
+When we do not mention any access modifier, it is called default access modifier.
+The scope of this modifier is limited to the package only. 
+This means that if we have a class with the default access modifier in a package, 
+only those classes that are in this package can access this class. 
+No other class outside this package can access this class
+
+.........................................................................................................................
+
+Enum
+
+Static
+It means a static variable or static method can be called using the class name
+without creating an instance or object of this class.
+
+Final
+It means a final class cannot be inherited by any other class.
+Once a final variable is initialized, you cannot change its value again
