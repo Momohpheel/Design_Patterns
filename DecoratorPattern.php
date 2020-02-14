@@ -26,35 +26,40 @@ class Yam implements Food{
 }
 
 abstract class FoodDecorator implements Food{
-   
-    abstract function addIngredient() : Food;
-   abstract function contains() : Food;
+  
+    abstract function addIngredient();
+   abstract function addcontains(Food $food) : Food;
+   abstract function contains();
 }
 
 class EggDecoration extends FoodDecorator{
     
     function addIngredient(): Food{
-        return "Egg has been added";
+        echo "Egg has been added";//there's an error here
     }
-    function contains(Food $food): Food{
-       echo $food->contains();
-       echo addIngredient();
-    }
+    function addcontains(Food $food): Food{
+        echo $food->contains();
+        return $this->addIngredient();
+     }
+    function contains(){}
+    
 }
 
 class FishDecoration extends FoodDecorator{
     
-    function addIngredient(): Food{
-        return "Fish has been added";
+    function addIngredient(){
+        echo "Fish has been added";//there's an error here
     }
-    function contains(Food $food): Food{
+    function addcontains(Food $food): Food{
        echo $food->contains();
-       echo addIngredient();
+       return $this->addIngredient();
     }
+    function contains(){}
 }
 
 $rice = new RiceBeans();
 
-$add = new EggDecoration(new RiceBeans);
-$add->contains();
+$add = new FishDecoration();
+$add->addcontains(new RiceBeans);
+
 ?>

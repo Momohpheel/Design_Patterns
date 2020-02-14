@@ -21,11 +21,19 @@ class Single{
     
 }
 
- 
+class Singleton extends Single{
+    public function __construct(){
+        return "I'm the Singleton pattern";
+    }
+}
 
-$instance = $get->hello();
+$singleton = new Singleton();
 
-echo $instance;
+$instance = $singleton->getObject();
+
+echo $instance->hello();
+
+
 
 
 
